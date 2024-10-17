@@ -1,9 +1,11 @@
 "use client"
 import React from 'react';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Breadcrumb, Image, Layout, Menu, theme } from 'antd';
 
 import LoginButton from './components/loginbutton';
-import RegisterButton from './components/register';
+import RegisterButton from './components/registerbutton';
+
+
 
 const { Header, Content, Footer } = Layout;
 
@@ -21,7 +23,6 @@ const App: React.FC = () => {
     <Layout>
       <Header style={{ display: 'flex', alignItems: 'center' }}>
         <div className="demo-logo" />
-        
         <Menu
           theme="dark"
           mode="horizontal"
@@ -39,14 +40,18 @@ const App: React.FC = () => {
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
         <div
-          style={{
+          style={{ 
             background: colorBgContainer,
-            minHeight: 280,
-            padding: 24,
+          
+            padding: 30,
             borderRadius: borderRadiusLG,
           }}
         >
-          
+           <Image 
+           alt="example"
+           src="https://images7.alphacoders.com/362/thumb-1920-362619.jpg"
+           style={{ width: '100%', height: 'auto', objectFit: 'contain' }}/>
+           
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
