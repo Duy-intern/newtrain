@@ -34,7 +34,7 @@ let BookingController = class BookingController {
 };
 exports.BookingController = BookingController;
 __decorate([
-    (0, roles_decorator_1.Roles)('admin'),
+    (0, roles_decorator_1.Roles)('admin,client'),
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard, roles_guard_1.RolesGuard),
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)()),

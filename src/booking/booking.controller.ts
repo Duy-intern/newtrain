@@ -14,7 +14,7 @@ export class BookingController {
         @Inject('BookingIService') private bookingService: BookingIService, 
         @Inject('BookingIRepo')private bookingRepo: BookingIRepo){}
 
-    @Roles('admin')
+    @Roles('admin,client')
     @UseGuards(AuthGuard, RolesGuard)
     @Get()
     async getAll(@Query() query: string): Promise<BookingI[]> {
