@@ -5,6 +5,7 @@ export declare class Hotel extends mongoose.Document {
     ratings: number;
     address: string;
     city: string;
+    image: string;
     price: number;
     submitStatus: string;
     createdAt: Date;

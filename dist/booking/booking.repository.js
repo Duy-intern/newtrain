@@ -46,6 +46,13 @@ let BookingRepository = class BookingRepository {
     async create(booking) {
         return this.bookingModel.create(booking);
     }
+    async delete(id) {
+        const booking = await this.bookingModel.findByIdAndDelete(id).lean();
+        if (!booking) {
+            throw new Error('Booking not found');
+        }
+        return booking;
+    }
 };
 exports.BookingRepository = BookingRepository;
 exports.BookingRepository = BookingRepository = __decorate([

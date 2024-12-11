@@ -42,4 +42,13 @@ export class BookingService implements BookingIService {
         }
         return this.bookingRepo.create(bookingData)
     }
+
+     async delete(bookingId: string): Promise<BookingI> {
+        const booking = await this.bookingRepo.getOne(bookingId);  // Lấy thông tin booking
+        if (!booking) {
+            throw new Error('Booking not found');
+        }
+
+        return this.bookingRepo.delete(bookingId);  // Gọi repository để xóa booking
+    }
 }

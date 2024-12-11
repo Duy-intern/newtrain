@@ -9,4 +9,5 @@ export declare class BookingController {
     getAll(query: string): Promise<BookingI[]>;
     getMyBooking(req: Request): Promise<BookingI[]>;
     getMyHotelBookings(query: string, req: Request): Promise<BookingI[]>;
+    delete(id: string, req: Request): Promise<BookingI>;
 }

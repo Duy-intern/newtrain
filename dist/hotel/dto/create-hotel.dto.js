@@ -39,4 +39,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)
 ], CreateHotelDto.prototype, "price", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateHotelDto.prototype, "image", void 0);
 //# sourceMappingURL=create-hotel.dto.js.map

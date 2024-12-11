@@ -31,10 +31,13 @@ let BookingController = class BookingController {
     async getMyHotelBookings(query, req) {
         return this.bookingService.findQuery(query, req.user.sub);
     }
+    async delete(id, req) {
+        return this.bookingService.delete(id);
+    }
 };
 exports.BookingController = BookingController;
 __decorate([
-    (0, roles_decorator_1.Roles)('admin,client'),
+    (0, roles_decorator_1.Roles)('admin', 'client'),
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard, roles_guard_1.RolesGuard),
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)()),
@@ -43,6 +46,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], BookingController.prototype, "getAll", null);
 __decorate([
+    (0, roles_decorator_1.Roles)('client'),
     (0, common_1.Get)('client'),
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     __param(0, (0, common_1.Req)()),
@@ -60,6 +64,15 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], BookingController.prototype, "getMyHotelBookings", null);
+__decorate([
+    (0, roles_decorator_1.Roles)('client', 'admin'),
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], BookingController.prototype, "delete", null);
 exports.BookingController = BookingController = __decorate([
     (0, common_1.Controller)('booking'),
     __param(0, (0, common_1.Inject)('BookingIService')),

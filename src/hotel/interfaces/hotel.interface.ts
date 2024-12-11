@@ -6,10 +6,13 @@ export interface HotelI {
     address: string
     city: string
     price: number
+    image:string
+    
 }
 
 export interface HotelIDetails extends HotelI {
     submitStatus: string
     createdAt?: Date
+
     owner: mongoose.Schema.Types.ObjectId
 }

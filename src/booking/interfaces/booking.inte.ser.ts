@@ -7,4 +7,6 @@ export interface BookingIService {
     findQuery(query: Object, providerId?: string): Promise<BookingI[]>
 
     create(bookingInfo: CreateBookingDto,hotelId: string, req): Promise<BookingI>
+        delete(bookingId: string): Promise<BookingI>  // Thêm phương thức xóa
+
 }

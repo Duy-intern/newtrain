@@ -1,6 +1,6 @@
 import { Model, Types } from "mongoose";
 import { InjectModel } from '@nestjs/mongoose'
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 
 import { HotelI, HotelIDetails } from "./interfaces/hotel.interface";
 import { HotelIRepo } from "./interfaces/hotel.interface.repo";
@@ -12,6 +12,10 @@ export class HotelRepository implements HotelIRepo {
     async getOne(id: string): Promise<HotelIDetails> {
         return this.hotelModel.findById(id).lean()
     }
+
+  async findByIdAndDelete(id: string): Promise<HotelIDetails> {
+   return await this.hotelModel.findByIdAndDelete(id).lean();
+  }
 
     async findQuery(query: Object): Promise<HotelIDetails[]> {
         //console.log(queryJson)
@@ -36,4 +40,5 @@ export class HotelRepository implements HotelIRepo {
     async changeStatus(hotelId: string, statusData: string): Promise<HotelIDetails> {
         return this.hotelModel.findByIdAndUpdate(hotelId, {submitStatus: statusData}, {new: true})
     }
+    
 }

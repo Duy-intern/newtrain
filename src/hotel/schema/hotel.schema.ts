@@ -18,6 +18,9 @@ export class Hotel extends mongoose.Document {
     city: string
 
     @Prop({required: true})
+    image: string
+
+    @Prop({required: true})
     price: number
     
     @Prop({enum: ['draft', 'submitted', 'approved'], default: "draft"})

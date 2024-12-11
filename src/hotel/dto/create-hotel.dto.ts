@@ -21,4 +21,8 @@ export class CreateHotelDto {
     @IsNumber()
     @IsNotEmpty()
     price: number
+
+    @IsString()
+    @IsNotEmpty()
+    image: string
 }

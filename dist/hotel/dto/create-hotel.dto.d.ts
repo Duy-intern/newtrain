@@ -4,4 +4,5 @@ export declare class CreateHotelDto {
     address: string;
     city: string;
     price: number;
+    image: string;
 }

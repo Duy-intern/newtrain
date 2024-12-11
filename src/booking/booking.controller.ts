@@ -1,4 +1,4 @@
-import { Controller, Get, Inject, Query, Req, UseGuards } from '@nestjs/common';
+import { Controller, Delete, Get, Inject, Param, Query, Req, UseGuards } from '@nestjs/common';
 
 import { BookingI } from './interfaces/booking.interface';
 import { Request } from 'src/shared/req.interface';
@@ -14,13 +14,14 @@ export class BookingController {
         @Inject('BookingIService') private bookingService: BookingIService, 
         @Inject('BookingIRepo')private bookingRepo: BookingIRepo){}
 
-    @Roles('admin,client')
-    @UseGuards(AuthGuard, RolesGuard)
+    @Roles('admin','client')
+        @UseGuards(AuthGuard, RolesGuard)
     @Get()
     async getAll(@Query() query: string): Promise<BookingI[]> {
         return this.bookingService.findQuery(query)
     }
 
+    @Roles('client')
     @Get('client')
     @UseGuards(AuthGuard)
     async getMyBooking(@Req() req: Request): Promise<BookingI[]> {
@@ -33,5 +34,13 @@ export class BookingController {
     async getMyHotelBookings(@Query() query: string, @Req() req: Request): Promise<BookingI[]> {
         return this.bookingService.findQuery(query, req.user.sub)
     }
+    
+    @Roles('client', 'admin')
+    @Delete(':id')
+    async delete(@Param('id') id: string, @Req() req: Request): Promise<BookingI> {
+        return this.bookingService.delete(id);
+    }
+
+ 
 
 }

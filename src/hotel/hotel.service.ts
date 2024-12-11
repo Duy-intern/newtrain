@@ -63,4 +63,10 @@ export class HotelService implements HotelIService {
         }
         return this.hotelRepo.changeStatus(hotelId, "submitted")
     }
+
+     
+  async delete(id: string): Promise<HotelIDetails> {
+    return this.hotelRepo.findByIdAndDelete(id);
+  }
+  
 }

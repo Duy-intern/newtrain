@@ -34,6 +34,10 @@ __decorate([
 ], Hotel.prototype, "city", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], Hotel.prototype, "image", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", Number)
 ], Hotel.prototype, "price", void 0);
 __decorate([

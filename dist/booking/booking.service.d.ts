@@ -10,4 +10,5 @@ export declare class BookingService implements BookingIService {
     findQuery(query: Object, providerId?: string): Promise<BookingI[]>;
     getOne(bookingId: string): Promise<BookingI>;
     create(bookingInfo: CreateBookingDto, hotelId: string, req: any): Promise<BookingI>;
+    delete(bookingId: string): Promise<BookingI>;
 }

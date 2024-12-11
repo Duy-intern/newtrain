@@ -38,4 +38,13 @@ export class BookingRepository implements BookingIRepo {
     async create(booking: BookingI): Promise<BookingI> {
         return this.bookingModel.create(booking)
     }
+
+      async delete(id: string): Promise<BookingI> {
+        const booking = await this.bookingModel.findByIdAndDelete(id).lean();
+        if (!booking) {
+            throw new Error('Booking not found');
+        }
+        return booking;
+    }
+  
 }

@@ -6,4 +6,5 @@ export declare class UpdateHotelDto {
     price: number;
     user: string;
     active: boolean;
+    image: string;
 }

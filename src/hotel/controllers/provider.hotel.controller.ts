@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Inject, Param, Patch, Post, Req, UseGuards, Query } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Param, Patch, Post, Req, UseGuards, Query, Delete } from '@nestjs/common';
 
 import { AuthGuard } from 'src/auth/guards/auth.guard';
 import { Roles } from 'src/auth/decorators/roles.decorator';
@@ -51,4 +51,8 @@ export class ProviderHotelController {
     async changeStatus(@Param() params: any, @Req() req: Request){
         return this.hotelService.changeStatus(params.id, req.user.sub)
     }
+
+  
+
+
 }

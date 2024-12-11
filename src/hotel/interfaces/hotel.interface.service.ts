@@ -8,9 +8,10 @@ export interface HotelIService {
     getApprovedHotels(query: Object): Promise<HotelIDetails[]>
     getOne(hotelId: string): Promise<HotelIDetails>
 
+ delete(id: string): Promise<HotelIDetails>;
     create(req: Request, hotel: CreateHotelDto): Promise<HotelI | HotelIDetails>
-    
     providerUpdate(hotelId: string, newData: UpdateHotelDto, req: Request): Promise<HotelIDetails>
+
     adminUpdate(hotelId: string, newData: UpdateHotelDto): Promise<HotelIDetails>
     changeStatus(hotelId: string, req: string): Promise<HotelIDetails>
 }

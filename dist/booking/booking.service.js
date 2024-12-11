@@ -47,6 +47,13 @@ let BookingService = class BookingService {
         };
         return this.bookingRepo.create(bookingData);
     }
+    async delete(bookingId) {
+        const booking = await this.bookingRepo.getOne(bookingId);
+        if (!booking) {
+            throw new Error('Booking not found');
+        }
+        return this.bookingRepo.delete(bookingId);
+    }
 };
 exports.BookingService = BookingService;
 exports.BookingService = BookingService = __decorate([

@@ -32,4 +32,9 @@ export class UpdateHotelDto {
 
     @IsOptional()
     active: boolean
+
+     @IsString()
+    @IsNotEmpty()
+    @IsOptional()
+    image: string
 }

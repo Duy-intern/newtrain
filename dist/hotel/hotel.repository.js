@@ -23,6 +23,9 @@ let HotelRepository = class HotelRepository {
     async getOne(id) {
         return this.hotelModel.findById(id).lean();
     }
+    async findByIdAndDelete(id) {
+        return await this.hotelModel.findByIdAndDelete(id).lean();
+    }
     async findQuery(query) {
         return this.hotelModel.find(query).lean();
     }

@@ -14,4 +14,5 @@ export declare class HotelService implements HotelIService {
     providerUpdate(hotelId: string, newData: UpdateHotelDto, req: Request): Promise<HotelIDetails>;
     adminUpdate(hotelId: string, newData: UpdateHotelDto): Promise<HotelIDetails>;
     changeStatus(hotelId: string, accountType: string): Promise<HotelIDetails>;
+    delete(id: string): Promise<HotelIDetails>;
 }

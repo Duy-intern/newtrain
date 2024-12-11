@@ -9,6 +9,9 @@ export interface HotelIRepo {
     changeStatus(hotelId: string, statusData: string): Promise<HotelIDetails>
     
     getOne(id: string): Promise<HotelIDetails>
+   findByIdAndDelete(id: string): Promise<HotelIDetails>;
+
+
     findQuery(query: Object): Promise<HotelIDetails[]>
     findParams(params: Object): Promise<HotelIDetails>
 }

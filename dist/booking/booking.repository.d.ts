@@ -9,4 +9,5 @@ export declare class BookingRepository implements BookingIRepo {
     findQuery(query: Object): Promise<BookingI[]>;
     findQueryProvider(query: Object, providerId: any): Promise<BookingI[]>;
     create(booking: BookingI): Promise<BookingI>;
+    delete(id: string): Promise<BookingI>;
 }

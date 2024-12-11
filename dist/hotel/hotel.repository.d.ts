@@ -5,6 +5,7 @@ export declare class HotelRepository implements HotelIRepo {
     private hotelModel;
     constructor(hotelModel: Model<HotelI>);
     getOne(id: string): Promise<HotelIDetails>;
+    findByIdAndDelete(id: string): Promise<HotelIDetails>;
     findQuery(query: Object): Promise<HotelIDetails[]>;
     findParams(params: Object): Promise<HotelIDetails>;
     create(hotel: HotelIDetails): Promise<HotelI | HotelIDetails>;

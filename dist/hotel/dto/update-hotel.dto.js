@@ -52,4 +52,10 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Boolean)
 ], UpdateHotelDto.prototype, "active", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], UpdateHotelDto.prototype, "image", void 0);
 //# sourceMappingURL=update-hotel.dto.js.map

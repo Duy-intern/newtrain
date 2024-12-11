@@ -63,6 +63,9 @@ let HotelService = class HotelService {
         }
         return this.hotelRepo.changeStatus(hotelId, "submitted");
     }
+    async delete(id) {
+        return this.hotelRepo.findByIdAndDelete(id);
+    }
 };
 exports.HotelService = HotelService;
 exports.HotelService = HotelService = __decorate([

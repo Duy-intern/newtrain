@@ -10,4 +10,6 @@ export interface BookingIRepo {
     findQueryProvider(query: Object, providerId): Promise<BookingI[]>
     
     create(booking): Promise<BookingI>
+    delete(id: string): Promise<BookingI>;  // Thêm phương thức delete
+
 }
